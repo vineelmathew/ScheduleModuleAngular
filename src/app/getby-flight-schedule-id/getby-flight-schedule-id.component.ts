@@ -19,6 +19,7 @@ export class GetbyFlightScheduleIdComponent{
    findById(form){
      let details=form.value;
      let id=details.fid;
+     console.log(id);
      let observable:Observable<FlightSchedule>=this.flightscheduleserv.getbyFlightScheduleId(id);
      observable.subscribe(
        flightArg=>{

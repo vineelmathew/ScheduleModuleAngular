@@ -7,20 +7,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
-        <table class="table table-striped">
+    <div class="fluid-container">
+        <table class="table">
         <thead>
             <tr>
-                <th>availableSeats</th>
-                <th>Flight Number</th>
-                <th>Schedule Id</th>
+                <th>arrival Time</th>
+                <th>carrierName</th>
+                <th>Departure Time</th>
+                <th>flight Model</th>
+                <th>flight Number</th>
+                <th>From airport</th>
+                <th>To Airport</th>
+                <th>Flight scheduleId</th>
+                <th>ScheduleId</th>
+                <th>SeatsAvailable</th>
+                <th>Seats capacity</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let schedules of flightschedules">
-                <td> {{flightschedules.availableSeats}}</td>
-                <td> {{flightschedules.flightNum}}</td>
-                <td> {{flightschedules.scheduleId}}</td>
+                <td> {{schedules.arrivalTime|date:'short'}}</td>
+                <td> {{schedules.carrierName}}</td>
+                <td> {{schedules.departureTime|date:'short'}}</td>
+                <td>{{schedules.flightModel}}</td>
+                <td>{{schedules.flightNum}}</td>
+                <td>{{schedules.fromAirport}}</td>
+                <td>{{schedules.toAirport}}</td>
+                <td>{{schedules.scheduleFlightId}}</td>
+                <td>{{schedules.scheduleId}}</td>
+                <td>{{schedules.seatsAvailable}}</td>
+                <td>{{schedules.seatsCapacity}}</td>
             </tr>
         </tbody>
         </table>
