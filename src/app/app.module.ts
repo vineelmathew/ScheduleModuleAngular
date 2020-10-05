@@ -9,12 +9,16 @@ import { ScheduleService } from './service/scheduleservice';
 import { CreatescheduleComponent } from './createschedule/createschedule.component';
 import { CreateflightscheduleComponent } from './createflightschedule/createflightschedule.component';
 import { FlightScheduleService } from './service/flightscheduleservice';
+import { GetallflightscheduleComponent } from './getallflightschedule/getallflightschedule.component';
+import { GetbyFlightScheduleIdComponent } from './getby-flight-schedule-id/getby-flight-schedule-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatescheduleComponent,
     CreateflightscheduleComponent,
+    GetallflightscheduleComponent,
+    GetbyFlightScheduleIdComponent,
   ],
   imports: [
     BrowserModule,

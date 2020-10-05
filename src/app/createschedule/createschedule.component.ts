@@ -14,24 +14,25 @@ export class CreatescheduleComponent implements OnInit {
   }
   ngOnInit():void{}
 
-  saveSchedule(form)
+  saveSchedule(form:any)
   {
     let details=form.value;
     let fromAirport=details.sourceAirport;
   let toAirport=details.destinationAirport;
   let airportCode=details.airportCode;
   let arrivalTime=details.arrival;
-  let at=new Date(arrivalTime);
+  console.log(arrivalTime);
+ let at=new Date(arrivalTime);
   let departureTime=details.departureTime;
-  let dt=new Date(departureTime);
-  console.log(at,dt);
+ let dt=new Date(departureTime);
+ console.log(at,dt);
   console.log(airportCode);
   this.schedule=new Schedule(fromAirport,toAirport,at,dt,airportCode);
   let result:Observable<Schedule>=this.scheduleservice.addSchedule(this.schedule);
   result.subscribe(
            response=>{
-             console.log(response.getAirportCode,response.getArrivalTime,response.getDepartureTime,
-                                 response.getFromAirport,response.getToAirport);
+ console.log(response.getAirportCode,response.getArrivalTime,response.getDepartureTime,
+ response.getFromAirport,response.getToAirport);
            }
   );
 

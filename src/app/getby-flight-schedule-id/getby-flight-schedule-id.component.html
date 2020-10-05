@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+<form #getform=ngForm (ngSubmit)="findById(getform)">
+    <div class="form-group">
+        <label>enter the flightschedule ID</label>
+        <input type="number" name="fid" ngModel class="form-control">
+    </div>
+    <input type="submit" value="getDetails" class="btn btn-success">
+</form>
+
+</body>
+</html>

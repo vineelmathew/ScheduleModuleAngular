@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { FlightSchedule } from '../model/flightschedule';
 @Injectable()
 export class FlightScheduleService{
-    baseurl="http://localhost:8586/flightschedules";
+    baseurl="http://localhost:8888/flightschedules";
     constructor(private http:HttpClient)
     {
 

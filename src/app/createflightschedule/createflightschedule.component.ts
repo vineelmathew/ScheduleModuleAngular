@@ -16,13 +16,13 @@ export class CreateflightscheduleComponent implements OnInit {
   ngOnInit(): void {
   
   }
-  saveFlightSchedule(form)
+  saveFlightSchedule(form:any)
   {
     let details=form.value;
-    // let availableSeats=details.seats;
-    // let scheduleId=details.id;
-    // let flightNum=details.flightnumber;
-    this.flightschedule=new FlightSchedule(1,1,1);
+    let availableSeats=details.seats;
+    let scheduleId=details.id;
+    let flightNum=details.flightnumber;
+    this.flightschedule=new FlightSchedule(availableSeats,scheduleId,flightNum);
     let observable:Observable<FlightSchedule>=this.flightservice.addFlightSchedule(this.flightschedule);
     observable.subscribe(
       success=>
