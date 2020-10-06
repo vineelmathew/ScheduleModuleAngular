@@ -1,18 +1,18 @@
 export class Schedule
 {
-    private fromAirport:string;
-    private toAirport:string;
+    private sourceAirport:string;
+    private destinationAirport:string;
     arrivalTime;
     departureTime;
     private airportCode:string;
 
-    constructor(fromAirport:string,toAirport:string,arrivalTime,departureTime,airportCode:string)
+    constructor(sourceAirport:string,destinationAirport:string,arrivalTime,departureTime,airportCode:string)
     {
             this.airportCode=airportCode;
             this.arrivalTime=arrivalTime;
             this.departureTime=departureTime;
-            this.fromAirport=fromAirport;
-            this.toAirport=toAirport;
+            this.sourceAirport=sourceAirport;
+            this.destinationAirport=destinationAirport;
     }
     getAirportCode():string{
         return this.airportCode;
@@ -24,11 +24,11 @@ export class Schedule
     {
         return this.arrivalTime;
     }
-    getFromAirport():string{
-        return this.fromAirport;
+    getsourceAirport():string{
+        return this.sourceAirport;
     }
-    getToAirport():string{
-        return this.toAirport;
+    getdestinationAirport():string{
+        return this.destinationAirport;
     }
     
 

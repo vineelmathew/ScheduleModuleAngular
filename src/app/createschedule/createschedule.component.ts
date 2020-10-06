@@ -25,14 +25,17 @@ export class CreatescheduleComponent implements OnInit {
  let at=new Date(arrivalTime);
   let departureTime=details.departureTime;
  let dt=new Date(departureTime);
- console.log(at,dt);
+ console.log("time conversion");
+ console.log(at.getTime());
+ console.log(dt.getTime());
   console.log(airportCode);
-  this.schedule=new Schedule(fromAirport,toAirport,at,dt,airportCode);
+  console.log("from airport "+fromAirport,"to Airport"+toAirport);
+  this.schedule=new Schedule(fromAirport,toAirport,at.getTime(),dt.getTime(),airportCode);
   let result:Observable<Schedule>=this.scheduleservice.addSchedule(this.schedule);
   result.subscribe(
            response=>{
  console.log(response.getAirportCode,response.getArrivalTime,response.getDepartureTime,
- response.getFromAirport,response.getToAirport);
+ response.getdestinationAirport,response.getsourceAirport);
            }
   );
 
