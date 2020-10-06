@@ -15,4 +15,9 @@ export class ScheduleService{
         let observe:Observable<Schedule>=this.http.post<Schedule>(addurl,schedule);
         return observe;
     }
+    getAllSchedules():Observable<Schedule[]>
+    {
+        let observe:Observable<Schedule[]>=this.http.get<Schedule[]>(this.baseUrl);
+        return observe;
+    }
 }

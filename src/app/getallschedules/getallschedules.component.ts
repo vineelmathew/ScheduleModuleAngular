@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Schedule } from '../model/schedule';
+import { ScheduleService } from '../service/scheduleservice';
 
 @Component({
   selector: 'app-getallschedules',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetallschedulesComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  schedules:Schedule[];
+  constructor(private scheduleService:ScheduleService) {
+   let observable:Observable<Schedule[]>=scheduleService.getAllSchedules();
+   observable.subscribe(
+     schedulearray=>this.schedules=schedulearray);
+   }
+  ngOnInit(): void {  
   }
 
 }

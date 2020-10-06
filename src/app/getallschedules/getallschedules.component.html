@@ -18,13 +18,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td colspan="2"></td>
-            <td colspan="2"></td>
-            <td></td>
+          <tr *ngFor="let schedule of schedules">
+            <td>{{schedule.scheduleId}}</td>
+            <td>{{schedule.airportCode}}</td>
+            <td>{{schedule.arrivalTime|date:'short'}}</td>
+            <td>{{schedule.departureTime|date:'short'}}</td>
+            <td>{{schedule.sourceAirport}}</td>
+            <td>{{schedule.destinationAirport}}</td>
           </tr>
         </tbody>
       </table>
